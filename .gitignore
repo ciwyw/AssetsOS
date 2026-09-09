@@ -1,0 +1,7 @@
+# Repository-local build, DerivedData, simulator deployment, and screenshot outputs.
+/build/
+.DS_Store
+deploy.local.sh
+*.xcuserstate
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
