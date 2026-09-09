@@ -8,6 +8,11 @@
 > - 被用户明确否决的方向要写成 **决策**，避免以后重复踩
 > - 详细的当前行为写进 `docs/spec/`，这里只留一句摘要
 
+## 2026-09-09
+
+- [工程] 仓库以全新历史重建并接到个人 GitHub（`git@github.com:ciwyw/AssetsOS.git`，private）。**决策：不迁移此前的本地历史。** 旧历史误提交过 `build/`，累计 3259 个文件、`.git` 达 114MB，且含 `embedded.mobileprovision`（Team ID 与真机 UDID）和 `xcuserdata` 路径；清洗成本高于其价值。新历史的初始提交 tree 与旧 HEAD 完全一致，未丢内容。
+- [工程] 提交身份改为仓库级 `--local` 配置，避免继承全局的公司邮箱。真机 profile（Team ID、UDID、设备名）仍只放 `deploy.local.sh`，该文件已 ignore 且从未提交。
+
 ## 2026-08-24
 
 - [工程] `deploy.sh` 按设备名找不到真机时，会列出当前可用设备；若只有一台则自动改用它，避免 iPhone 改名后默认部署直接失败。本地 profile 改为优先用 Identifier，不再依赖会变的设备名。设备列表不再把 `unavailable` 误判成可用。
